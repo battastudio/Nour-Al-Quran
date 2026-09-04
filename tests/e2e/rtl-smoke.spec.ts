@@ -34,4 +34,26 @@ test.describe('RTL app shell', () => {
     await expect(page.getByText('سورة الكهف')).toBeVisible();
     await expect(page.getByText('سورة الفاتحة')).toHaveCount(0);
   });
+
+  test('prayer screen prompts for location before times', async ({ page }) => {
+    await page.goto('#/prayer');
+    await expect(page.getByRole('button', { name: 'تحديد موقعي' })).toBeVisible();
+  });
+
+  test('adhkar screen lists Hisn al-Muslim categories', async ({ page }) => {
+    await page.goto('#/adhkar');
+    await expect(page.getByText('حصن المسلم', { exact: false })).toBeVisible();
+    await expect(page.getByText('أذكار الصباح والمساء')).toBeVisible();
+  });
+
+  test('settings shows on-device data + account link', async ({ page }) => {
+    await page.goto('#/settings');
+    await expect(page.getByText('الملف الشخصي والمزامنة')).toBeVisible();
+    await expect(page.getByText('بياناتك محفوظة على جهازك', { exact: false })).toBeVisible();
+  });
+
+  test('khatmah offers a plan setup', async ({ page }) => {
+    await page.goto('#/khatmah');
+    await expect(page.getByRole('button', { name: 'ابدأ الختمة' })).toBeVisible();
+  });
 });

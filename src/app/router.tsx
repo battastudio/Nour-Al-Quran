@@ -23,6 +23,7 @@ import { Onboarding } from '@/features/onboarding/Onboarding';
 import { Drive } from '@/features/drive/Drive';
 import { Night } from '@/features/night/Night';
 import { Waqf } from '@/features/lab/Waqf';
+import { Lab } from '@/features/lab/Lab';
 import { Khatmah } from '@/features/khatmah/Khatmah';
 import { SurahPath } from '@/features/hifz/SurahPath';
 import { Similar } from '@/features/similar/Similar';
@@ -68,6 +69,7 @@ export const router = createHashRouter([
           { path: 'tasbih', element: <Tasbih />, handle: { title: 'المسبحة' } },
           { path: 'downloads', element: <Downloads />, handle: { title: 'التنزيلات' } },
           { path: 'night', element: <Night />, handle: { title: 'قيام الليل' } },
+          { path: 'lab', element: <Lab />, handle: { title: 'المختبر' } },
           { path: 'lab/waqf', element: <Waqf />, handle: { title: 'الوقف والابتداء' } },
           { path: 'root/:root', element: <ComingSoon title="شجرة الجذور" />, handle: { title: 'الجذور' } },
           { path: 'settings', element: <Settings />, handle: { title: 'الإعدادات' } },

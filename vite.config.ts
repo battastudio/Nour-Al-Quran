@@ -40,13 +40,27 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // Precache app shell + Quran JSON + fonts → full offline after first load.
+        // Precache app shell + Quran JSON + Arabic fonts → full offline after first load.
         globPatterns: ['**/*.{js,css,html,woff2,json,svg,png}'],
+        // The Material Symbols variable font is ~4MB — too heavy for install-time
+        // precache. It is runtime-cached on first use instead (CacheFirst below).
+        // ponytail: proper fix is pyftsubset to the ~40 icons used; do it when
+        // fonttools is available in CI.
+        globIgnores: ['**/material-symbols-outlined-*.woff2'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
         navigateFallback: 'index.html',
         // Web Push (Tier B) handlers are injected into the generated SW.
         importScripts: ['push-sw.js'],
         runtimeCaching: [
+          {
+            urlPattern: ({ url }) => /material-symbols-outlined-.*\.woff2$/.test(url.pathname),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'icon-font',
+              expiration: { maxEntries: 4, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
           {
             // Reciter audio — stream first, cache what has been heard.
             urlPattern: ({ url }) => /everyayah\.com|quran\.com|qurancdn\.com/.test(url.href),
