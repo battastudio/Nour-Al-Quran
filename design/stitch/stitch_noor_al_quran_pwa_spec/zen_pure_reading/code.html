@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>المصحف الشريف — سورة الفاتحة</title>
+<!-- Google Fonts: Amiri & Amiri Quran & Scheherazade New -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Amiri+Quran&amp;family=Scheherazade+New:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment: '#fbf7ee',
+            'parchment-border': '#ded2be',
+            'mushaf-gold': '#b98c36',
+            'mushaf-gold-light': '#eed99f',
+            'mushaf-gold-dark': '#8c651e',
+            'allah-red': '#b31e1e',
+            'quran-ink': '#1a1816',
+          },
+          fontFamily: {
+            quran: ['"Amiri Quran"', '"Scheherazade New"', 'Amiri', 'serif'],
+            naskh: ['Amiri', '"Scheherazade New"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Texture, Frame Borders, Page-Curl, and Typography -->
+<style data-purpose="mushaf-paper">
+    body {
+      background-color: #12100d;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    /* Tactile Chamois Parchment Page Texture */
+    .mushaf-page {
+      background-color: #fbf7ee;
+      background-image: 
+        radial-gradient(#b8a07e 0.45px, transparent 0.45px),
+        linear-gradient(to right, rgba(0,0,0,0.04) 0%, rgba(255,255,255,0.4) 4%, rgba(0,0,0,0) 8%, rgba(0,0,0,0) 96%, rgba(0,0,0,0.03) 100%);
+      background-size: 14px 14px, 100% 100%;
+      box-shadow: 0 10px 40px -10px rgba(0,0,0,0.6), inset 0 0 50px rgba(184, 155, 110, 0.15);
+    }
+
+    /* Ornate Double-border for Holy Page Boundary */
+    .mushaf-outer-border {
+      border: 3px double #b98c36;
+      outline: 1px solid #d4b267;
+      outline-offset: -5px;
+    }
+
+    /* Realistic 3D Corner Page Turn Curl */
+    .page-curl-corner {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 54px;
+      height: 54px;
+      background: linear-gradient(135deg, #ded2bf 45%, #f1e9dc 50%, #ffffff 56%, #cca972 62%, transparent 62%);
+      filter: drop-shadow(2px -2px 3px rgba(44, 30, 10, 0.28));
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .page-curl-corner:active {
+      transform: scale(1.08);
+    }
+  </style>
+<style data-purpose="ayah-typography">
+    /* High-legibility Uthmanic Quran Spacing */
+    .ayah-text {
+      line-height: 2.55;
+      letter-spacing: 0.02em;
+      word-spacing: 0.16em;
+      text-align: justify;
+      text-justify: amiri;
+      text-align-last: center;
+    }
+
+    /* Golden Ayah Ornament Rosette */
+    .ayah-rosette {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.55em;
+      height: 1.55em;
+      margin: 0 0.22em;
+      vertical-align: middle;
+      position: relative;
+      color: #92691d;
+      font-size: 0.88em;
+      font-family: 'Amiri', serif;
+      font-weight: 700;
+    }
+    
+    .ayah-rosette::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid #c29947;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff7e4 0%, #ecdcb8 100%);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+
+    .ayah-rosette span {
+      position: relative;
+      z-index: 1;
+      font-variant-numeric: normal;
+      font-feature-settings: "tnum";
+      line-height: 1;
+      padding-top: 1px;
+    }
+  </style>
+</head>
+<body class="p-0 sm:py-3">
+<!-- BEGIN: MushafReadingCanvas (100% Focused Zen Layout) -->
+<main class="mushaf-page relative w-full max-w-[430px] min-h-screen sm:min-h-[920px] sm:max-h-[932px] sm:rounded-2xl overflow-hidden flex flex-col justify-between p-3.5 sm:p-4 text-quran-ink" data-purpose="pure-quran-view">
+<!-- BEGIN: OuterOrnamentalFrame -->
+<div class="mushaf-outer-border absolute inset-2.5 sm:inset-3 pointer-events-none rounded-[3px]">
+<!-- Corner floral embellishments -->
+<span class="absolute -top-[5px] -right-[5px] w-2.5 h-2.5 bg-mushaf-gold rotate-45 border border-amber-100"></span>
+<span class="absolute -top-[5px] -left-[5px] w-2.5 h-2.5 bg-mushaf-gold rotate-45 border border-amber-100"></span>
+<span class="absolute -bottom-[5px] -right-[5px] w-2.5 h-2.5 bg-mushaf-gold rotate-45 border border-amber-100"></span>
+<span class="absolute -bottom-[5px] -left-[5px] w-2.5 h-2.5 bg-mushaf-gold rotate-45 border border-amber-100"></span>
+</div>
+<!-- END: OuterOrnamentalFrame -->
+<!-- BEGIN: TraditionalMushafHeaderRibbon -->
+<header class="relative z-10 pt-2 pb-1.5 px-3 border-b border-mushaf-gold/35 flex items-center justify-between font-naskh text-sm sm:text-[15px] font-semibold text-mushaf-gold-dark select-none" data-purpose="traditional-header-margin">
+<!-- Right: Juz Indicator -->
+<div class="flex items-center gap-1.5" data-purpose="juz-label">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-mushaf-gold"></span>
+<span class="tracking-wide text-neutral-800">الجُزْءُ الأَوَّلُ</span>
+</div>
+<!-- Center: Surah Title Emblem -->
+<div class="flex items-center gap-2" data-purpose="center-surah-title">
+<span class="text-mushaf-gold opacity-75 text-xs">۞</span>
+<h1 class="text-base sm:text-lg font-bold text-neutral-900 tracking-normal font-quran">سُورَةُ الفَاتِحَةِ</h1>
+<span class="text-mushaf-gold opacity-75 text-xs">۞</span>
+</div>
+<!-- Left: Page Indicator -->
+<div class="flex items-center gap-1.5" data-purpose="page-number-top">
+<span class="text-neutral-800 tracking-wide">صَفْحَة ١</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-mushaf-gold"></span>
+</div>
+</header>
+<!-- END: TraditionalMushafHeaderRibbon -->
+<!-- BEGIN: MainReadingSanctuary (The Pure Quranic Text) -->
+<article class="relative z-10 flex-1 flex flex-col justify-center px-2.5 sm:px-4 py-2 font-quran selection:bg-mushaf-gold-light/40" data-purpose="quranic-content-container">
+<!-- BEGIN: SurahBanner (Golden Ornate Cartouche) -->
+<section class="mb-5 sm:mb-6" data-purpose="surah-heading-banner">
+<div class="relative w-full rounded-md border-2 border-mushaf-gold bg-gradient-to-b from-[#f8eccf] via-[#fffbf0] to-[#f4e2b8] p-1.5 shadow-sm text-center">
+<!-- Inner geometric frame -->
+<div class="border border-mushaf-gold-dark/60 rounded px-3 py-2 flex items-center justify-between relative overflow-hidden">
+<!-- Subtle arabesque background watermark pattern -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#8c651e_1px,transparent_1px)] [background-size:8px_8px] pointer-events-none"></div>
+<!-- Side Wing Left -->
+<span class="hidden sm:inline-block text-mushaf-gold-dark text-xs font-naskh">٧ آيَاتٍ</span>
+<!-- Central Calligraphic Banner -->
+<div class="mx-auto flex flex-col items-center">
+<h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 leading-tight">سُورَةُ الفَاتِحَةِ</h2>
+<p class="text-xs sm:text-[13px] font-naskh font-semibold text-mushaf-gold-dark mt-0.5 tracking-wider">
+                مَكِّيَّةٌ • آيَاتُهَا سَبْعٌ
+              </p>
+</div>
+<!-- Side Wing Right -->
+<span class="hidden sm:inline-block text-mushaf-gold-dark text-xs font-naskh">تَرْتِيبُهَا ١</span>
+</div>
+</div>
+</section>
+<!-- END: SurahBanner -->
+<!-- BEGIN: Basmalah -->
+<div class="text-center mb-6 sm:mb-7 select-none" data-purpose="holy-basmalah">
+<p class="text-2xl sm:text-[27px] font-bold text-neutral-900 tracking-wide leading-relaxed">
+          بِسْمِ <span class="text-allah-red font-semibold">اللَّهِ</span> الرَّحْمَٰنِ الرَّحِيمِ
+        </p>
+</div>
+<!-- END: Basmalah -->
+<!-- BEGIN: SacredVersesFlow -->
+<section class="ayah-text text-[23px] sm:text-[25px] md:text-[26px] text-neutral-900 font-normal leading-[2.4] sm:leading-[2.5]" data-purpose="fatihah-verses">
+<!-- Ayah 1 -->
+<span>ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ</span>
+<span aria-label="آية 1" class="ayah-rosette"><span>١</span></span>
+<!-- Ayah 2 -->
+<span>ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</span>
+<span aria-label="آية 2" class="ayah-rosette"><span>٢</span></span>
+<!-- Ayah 3 -->
+<span>مَـٰلِكِ يَوْمِ ٱلدِّينِ</span>
+<span aria-label="آية 3" class="ayah-rosette"><span>٣</span></span>
+<!-- Ayah 4 -->
+<span>إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</span>
+<span aria-label="آية 4" class="ayah-rosette"><span>٤</span></span>
+<!-- Ayah 5 -->
+<span>ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ</span>
+<span aria-label="آية 5" class="ayah-rosette"><span>٥</span></span>
+<!-- Ayah 6 & 7 -->
+<span>صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ</span>
+<span aria-label="آية 7" class="ayah-rosette"><span>٧</span></span>
+</section>
+<!-- END: SacredVersesFlow -->
+<!-- BEGIN: EndOfSurahFloralDivider -->
+<div class="mt-8 mb-4 flex items-center justify-center gap-3 text-mushaf-gold" data-purpose="surah-concluding-ornament">
+<div class="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent to-mushaf-gold"></div>
+<div class="flex items-center gap-1.5 text-base sm:text-lg">
+<span class="rotate-45 inline-block text-xs">◆</span>
+<span>۞</span>
+<span class="text-xs">خَاتِمَةُ السُّورَةِ</span>
+<span>۞</span>
+<span class="rotate-45 inline-block text-xs">◆</span>
+</div>
+<div class="h-px w-16 sm:w-24 bg-gradient-to-l from-transparent to-mushaf-gold"></div>
+</div>
+<!-- END: EndOfSurahFloralDivider -->
+</article>
+<!-- END: MainReadingSanctuary -->
+<!-- BEGIN: MinimalistSpiritualFooter -->
+<footer class="relative z-10 pb-2.5 pt-1 px-3 border-t border-mushaf-gold/30 flex items-center justify-between text-xs text-stone-600 font-naskh select-none" data-purpose="zen-footer">
+<!-- Right: Edition & Riwayah Note -->
+<div class="text-[11px] sm:text-xs text-stone-700 tracking-normal">
+        مُصْحَفُ المَدِينَةِ النَّبَوِيَّةِ • حَفْص عَنْ عَاصِم
+      </div>
+<!-- Center: Whisper Page Index -->
+<div class="font-bold text-neutral-800 text-sm">
+        — ١ —
+      </div>
+<!-- Left: Gentle Turn Page Cue -->
+<div class="text-[11px] sm:text-xs text-mushaf-gold-dark flex items-center gap-1 opacity-80">
+<span>اقلب</span>
+<span class="text-[10px]">◀</span>
+</div>
+</footer>
+<!-- END: MinimalistSpiritualFooter -->
+<!-- BEGIN: TactileTurnCornerIndicator -->
+<!-- Realistic folded paper edge inviting swipe/turn without UI clutter -->
+<div class="page-curl-corner" data-purpose="tactile-page-turn-hint" onclick="/* Subtle interaction hook */" title="اسحب أو انقر لتقليب الصفحة">
+<span class="absolute bottom-1.5 left-1.5 text-[9px] text-amber-900/60 font-naskh rotate-45 select-none font-bold">٢</span>
+</div>
+<!-- END: TactileTurnCornerIndicator -->
+</main>
+<!-- END: MushafReadingCanvas -->
+</body></html>

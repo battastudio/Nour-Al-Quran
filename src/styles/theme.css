@@ -1,0 +1,164 @@
+/*
+ * Theme tokens as space-separated RGB channels so Tailwind's `/<alpha-value>`
+ * works (e.g. bg-surface/85 for the glass header).
+ * [data-theme] lives on <html> alongside :root — same element, so any token a
+ * theme does not redefine simply inherits the :root (day) value. Each dark theme
+ * below overrides the full set to stay legible.
+ */
+
+:root,
+[data-theme='day'] {
+  /* النهار — Stitch defaults (light) */
+  --color-primary: 0 67 51;
+  --color-on-primary: 255 255 255;
+  --color-primary-container: 15 92 72;
+  --color-on-primary-container: 141 210 184;
+  --color-secondary: 120 90 0;
+  --color-on-secondary: 255 255 255;
+  --color-secondary-container: 252 206 102;
+  --color-on-secondary-container: 117 87 0;
+  --color-tertiary: 61 58 45;
+  --color-on-tertiary: 255 255 255;
+  --color-tertiary-container: 85 81 67;
+  --color-on-tertiary-container: 202 196 178;
+  --color-error: 186 26 26;
+  --color-on-error: 255 255 255;
+  --color-error-container: 255 218 214;
+  --color-on-error-container: 147 0 10;
+  --color-background: 255 248 244;
+  --color-on-background: 32 27 21;
+  --color-surface: 255 248 244;
+  --color-on-surface: 32 27 21;
+  --color-surface-variant: 236 225 215;
+  --color-on-surface-variant: 63 73 68;
+  --color-surface-dim: 227 216 206;
+  --color-surface-bright: 255 248 244;
+  --color-surface-container-lowest: 255 255 255;
+  --color-surface-container-low: 253 242 231;
+  --color-surface-container: 247 236 226;
+  --color-surface-container-high: 241 230 220;
+  --color-surface-container-highest: 236 225 215;
+  --color-outline: 111 121 116;
+  --color-outline-variant: 191 201 195;
+  --color-inverse-surface: 53 47 41;
+  --color-inverse-on-surface: 250 239 229;
+  --color-inverse-primary: 143 212 187;
+  --color-surface-tint: 35 106 85;
+}
+
+[data-theme='night'] {
+  /* ليل — OLED near-black */
+  --color-primary: 143 212 187;
+  --color-on-primary: 0 56 42;
+  --color-primary-container: 0 81 62;
+  --color-on-primary-container: 171 241 214;
+  --color-secondary: 237 192 90;
+  --color-on-secondary: 62 46 0;
+  --color-secondary-container: 91 67 0;
+  --color-on-secondary-container: 255 223 157;
+  --color-tertiary: 204 198 180;
+  --color-on-tertiary: 30 28 16;
+  --color-tertiary-container: 74 71 57;
+  --color-on-tertiary-container: 233 226 207;
+  --color-error: 255 180 171;
+  --color-on-error: 105 0 5;
+  --color-error-container: 147 0 10;
+  --color-on-error-container: 255 218 214;
+  --color-background: 0 0 0;
+  --color-on-background: 230 225 218;
+  --color-surface: 0 0 0;
+  --color-on-surface: 230 225 218;
+  --color-surface-variant: 63 73 68;
+  --color-on-surface-variant: 191 201 195;
+  --color-surface-dim: 0 0 0;
+  --color-surface-bright: 40 46 42;
+  --color-surface-container-lowest: 0 0 0;
+  --color-surface-container-low: 16 18 17;
+  --color-surface-container: 26 30 28;
+  --color-surface-container-high: 33 38 35;
+  --color-surface-container-highest: 40 46 42;
+  --color-outline: 137 147 144;
+  --color-outline-variant: 63 73 68;
+  --color-inverse-surface: 230 225 218;
+  --color-inverse-on-surface: 32 27 21;
+  --color-inverse-primary: 0 67 51;
+  --color-surface-tint: 143 212 187;
+}
+
+[data-theme='emerald'] {
+  /* زمرّد — deep emerald */
+  --color-primary: 52 211 153;
+  --color-on-primary: 0 37 26;
+  --color-primary-container: 15 92 72;
+  --color-on-primary-container: 171 241 214;
+  --color-secondary: 252 206 102;
+  --color-on-secondary: 37 26 0;
+  --color-secondary-container: 91 67 0;
+  --color-on-secondary-container: 255 223 157;
+  --color-tertiary: 204 198 180;
+  --color-on-tertiary: 30 28 16;
+  --color-tertiary-container: 74 71 57;
+  --color-on-tertiary-container: 233 226 207;
+  --color-error: 255 180 171;
+  --color-on-error: 105 0 5;
+  --color-error-container: 147 0 10;
+  --color-on-error-container: 255 218 214;
+  --color-background: 4 33 26;
+  --color-on-background: 215 242 230;
+  --color-surface: 4 33 26;
+  --color-on-surface: 215 242 230;
+  --color-surface-variant: 44 74 62;
+  --color-on-surface-variant: 169 201 187;
+  --color-surface-dim: 3 26 21;
+  --color-surface-bright: 16 66 52;
+  --color-surface-container-lowest: 3 26 21;
+  --color-surface-container-low: 6 40 32;
+  --color-surface-container: 8 48 38;
+  --color-surface-container-high: 12 58 46;
+  --color-surface-container-highest: 16 66 52;
+  --color-outline: 111 138 126;
+  --color-outline-variant: 44 74 62;
+  --color-inverse-surface: 215 242 230;
+  --color-inverse-on-surface: 4 33 26;
+  --color-inverse-primary: 0 67 51;
+  --color-surface-tint: 52 211 153;
+}
+
+[data-theme='royal'] {
+  /* ملكي — royal navy + gold */
+  --color-primary: 157 178 255;
+  --color-on-primary: 10 26 77;
+  --color-primary-container: 30 58 138;
+  --color-on-primary-container: 214 224 255;
+  --color-secondary: 252 206 102;
+  --color-on-secondary: 37 26 0;
+  --color-secondary-container: 91 67 0;
+  --color-on-secondary-container: 255 223 157;
+  --color-tertiary: 204 198 180;
+  --color-on-tertiary: 30 28 16;
+  --color-tertiary-container: 74 71 57;
+  --color-on-tertiary-container: 233 226 207;
+  --color-error: 255 180 171;
+  --color-on-error: 105 0 5;
+  --color-error-container: 147 0 10;
+  --color-on-error-container: 255 218 214;
+  --color-background: 10 17 40;
+  --color-on-background: 223 228 245;
+  --color-surface: 10 17 40;
+  --color-on-surface: 223 228 245;
+  --color-surface-variant: 53 62 92;
+  --color-on-surface-variant: 179 187 214;
+  --color-surface-dim: 8 14 33;
+  --color-surface-bright: 30 42 84;
+  --color-surface-container-lowest: 8 14 33;
+  --color-surface-container-low: 14 22 48;
+  --color-surface-container: 18 27 58;
+  --color-surface-container-high: 24 34 70;
+  --color-surface-container-highest: 30 42 84;
+  --color-outline: 124 133 163;
+  --color-outline-variant: 53 62 92;
+  --color-inverse-surface: 223 228 245;
+  --color-inverse-on-surface: 10 17 40;
+  --color-inverse-primary: 30 58 138;
+  --color-surface-tint: 157 178 255;
+}

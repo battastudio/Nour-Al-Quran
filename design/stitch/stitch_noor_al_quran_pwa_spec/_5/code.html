@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>سورة آل عمران - المصحف الشريف</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Sacred Arabic Calligraphy -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Amiri+Quran&amp;family=Scheherazade+New:wght@400;700&amp;family=Noto+Naskh+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment: {
+              50: '#FDFCF7',
+              100: '#FAF7EE',
+              200: '#F4EED9',
+              300: '#EBDDBB',
+              800: '#4A3E2C',
+              900: '#2C2417',
+            },
+            sacredRed: '#DC2626',
+            sacredRuby: '#B91C1C',
+            quranGold: '#B8860B',
+            quranBronze: '#8C6239',
+            mushafDark: '#171410',
+          },
+          fontFamily: {
+            quran: ['"Amiri Quran"', '"Scheherazade New"', 'serif'],
+            amiri: ['Amiri', 'serif'],
+            naskh: ['"Noto Naskh Arabic"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="typography">
+    .quran-text {
+      font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', serif;
+      line-height: 2.75rem;
+      text-align: justify;
+      text-justify: kashida;
+      word-spacing: 0.14em;
+    }
+    .allah-red {
+      color: #DC2626;
+      font-weight: 700;
+      display: inline-block;
+      text-shadow: 0 0.5px 0.5px rgba(220, 38, 38, 0.25);
+    }
+    .ayah-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 1.85rem;
+      height: 1.85rem;
+      margin: 0 0.22rem;
+      vertical-align: middle;
+      color: #654321;
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: 'Amiri', serif;
+      user-select: none;
+    }
+    .ayah-num::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, #faf3de 25%, #d4b26f 75%, #8f6229 100%);
+      border: 1.5px solid #7c4f1d;
+      border-radius: 50%;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.7), 0 1.5px 2px rgba(0,0,0,0.18);
+      z-index: -1;
+    }
+    .pause-mark {
+      font-size: 0.72rem;
+      color: #b45309;
+      margin: 0 0.15rem;
+      vertical-align: super;
+      font-weight: bold;
+    }
+  </style>
+<style data-purpose="paper-textures">
+    .mushaf-paper {
+      background-color: #f7f2e5;
+      background-image: 
+        radial-gradient(#d3c6a6 0.75px, transparent 0.75px),
+        linear-gradient(90deg, rgba(210,195,160,0.15) 0%, rgba(255,255,255,0.2) 20%, rgba(210,195,160,0.05) 80%, rgba(185,165,125,0.25) 100%);
+      background-size: 16px 16px, 100% 100%;
+      box-shadow: 
+        inset 16px 0 25px -12px rgba(60, 42, 20, 0.35),
+        inset -12px 0 20px -10px rgba(60, 42, 20, 0.25),
+        0 10px 30px -5px rgba(0, 0, 0, 0.4);
+    }
+    .night-mode {
+      background-color: #1a1917 !important;
+      background-image: radial-gradient(#312e2b 0.75px, transparent 0.75px) !important;
+      color: #e5dfcf !important;
+      box-shadow: inset 16px 0 25px -12px rgba(0,0,0,0.8), inset -12px 0 20px -10px rgba(0,0,0,0.6) !important;
+    }
+    .spine-crease {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 22px;
+      background: linear-gradient(to left, rgba(65, 45, 20, 0.38), rgba(65, 45, 20, 0.08) 70%, transparent);
+      pointer-events: none;
+      z-index: 20;
+    }
+    .page-curl-corner {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, transparent 50%, rgba(220, 205, 175, 0.95) 51%, #fff8e7 70%, #d8c39d 100%);
+      box-shadow: -4px -4px 10px rgba(0,0,0,0.28);
+      cursor: pointer;
+      border-top-right-radius: 6px;
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      z-index: 30;
+    }
+    .page-curl-corner:hover, .page-curl-active {
+      width: 92px;
+      height: 92px;
+      box-shadow: -8px -8px 18px rgba(0,0,0,0.38);
+    }
+    .page-turning {
+      transform-origin: right center;
+      animation: pageTurn3D 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes pageTurn3D {
+      0% { transform: perspective(1200px) rotateY(0deg); opacity: 1; }
+      50% { transform: perspective(1200px) rotateY(-35deg) skewY(-2deg); opacity: 0.85; }
+      100% { transform: perspective(1200px) rotateY(-85deg); opacity: 0.1; }
+    }
+  </style>
+<style data-purpose="ornaments">
+    .ornate-surah-frame {
+      border: 3.5px double #784e1b;
+      outline: 1.5px solid #d4af37;
+      outline-offset: -5px;
+      background: radial-gradient(circle, #fffaf0 0%, #f7ecd2 60%, #e9d5aa 100%);
+      box-shadow: inset 0 0 10px rgba(120, 78, 27, 0.2), 0 2px 5px rgba(0,0,0,0.12);
+      position: relative;
+    }
+    .badge-cartouche {
+      border: 1.5px solid #7c4f1d;
+      background: #fdfaf0;
+      box-shadow: inset 0 0 4px rgba(140, 98, 57, 0.35);
+      border-radius: 9999px;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+</head>
+<body class="bg-stone-900 min-h-screen text-stone-900 antialiased flex flex-col items-center justify-start py-2 px-1 select-none">
+<!-- BEGIN: MainMobileContainer -->
+<!-- Container fits typical modern iOS canvas with safe margins -->
+<main class="w-full max-w-[420px] min-h-[92vh] flex flex-col relative pb-16" data-purpose="mushaf-screen">
+<!-- BEGIN: TopHeaderBar -->
+<header class="w-full bg-stone-950 text-amber-100/90 px-4 py-2.5 rounded-t-xl flex items-center justify-between shadow-lg border-b border-amber-900/40 text-xs font-amiri" data-purpose="top-navigation">
+<div class="flex items-center space-x-2 space-x-reverse">
+<span class="inline-flex items-center justify-center bg-amber-900/60 border border-amber-600/40 px-2 py-0.5 rounded text-[11px] text-amber-200">
+          الجزء ٣
+        </span>
+<span class="text-stone-400">|</span>
+<span class="font-bold text-amber-200 text-sm">الحزب ٦</span>
+</div>
+<div class="text-center font-bold text-sm tracking-wide text-amber-100 flex items-center gap-1">
+<span>سُورَةُ آلِ عِمْرَانَ</span>
+</div>
+<!-- Controls: Bookmark & Texture toggle -->
+<div class="flex items-center space-x-3 space-x-reverse text-amber-400">
+<button class="p-1 rounded hover:bg-stone-800 transition active:scale-95 text-xs flex items-center gap-0.5 text-amber-300" id="btnPaperTexture" title="تغيير نمط الورق">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+</button>
+<button class="p-1 rounded hover:bg-stone-800 transition active:scale-90 text-amber-400" id="btnBookmark" title="حفظ الفاصل">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 3v18l7-4 7 4V3z"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: TopHeaderBar -->
+<!-- BEGIN: MushafPhysicalPage -->
+<!-- Authentic physical page replicating Reference Image Image_2 -->
+<article class="mushaf-paper relative flex-1 px-4 sm:px-6 pt-5 pb-9 transition-all duration-300 shadow-2xl border-x border-amber-950/20 overflow-hidden" data-purpose="physical-quran-page" id="mushafPage">
+<!-- Realistic Book Spine Crease & Shadow Overlay -->
+<div class="spine-crease"></div>
+<!-- Top Mushaf Inner Border Frame -->
+<div class="w-full border-b border-amber-800/30 pb-2 mb-3 flex items-center justify-between text-[11px] font-amiri text-stone-700 font-semibold px-1">
+<span>الجُزْءُ الثَّالِث</span>
+<span class="text-sacredRuby font-bold">سُورَةُ آلِ عِمْرَانَ</span>
+<span>صَفْحَة ٥٠</span>
+</div>
+<!-- BEGIN: OrnateSurahHeader -->
+<!-- Replicating the distinct gold/bronze engraved cartouche from reference Image_2 -->
+<div class="ornate-surah-frame rounded-md p-2 mb-3.5 text-center flex items-center justify-between relative overflow-hidden" data-purpose="surah-header-ornament">
+<!-- Right side badge: Ayah Count -->
+<div class="badge-cartouche px-2 py-0.5 z-10 flex flex-col items-center justify-center min-w-[54px]">
+<span class="text-[9px] text-amber-900 font-bold leading-tight">آيَاتُهَا</span>
+<span class="text-xs text-amber-950 font-bold leading-none">٢٠٠</span>
+</div>
+<!-- Center Surah Calligraphy Title -->
+<div class="relative z-10 mx-auto px-2">
+<h1 class="font-quran text-2xl md:text-3xl font-bold tracking-wide text-amber-950 leading-tight drop-shadow-sm">
+            سُورَةُ آلِ عِمْرَانَ
+          </h1>
+</div>
+<!-- Left side badge: Order in Quran -->
+<div class="badge-cartouche px-2 py-0.5 z-10 flex flex-col items-center justify-center min-w-[54px]">
+<span class="text-[9px] text-amber-900 font-bold leading-tight">تَرْتِيبُهَا</span>
+<span class="text-xs text-amber-950 font-bold leading-none">٣</span>
+</div>
+<!-- Subtle arabesque background pattern overlay -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#804000_1px,transparent_1px)] [background-size:8px_8px] pointer-events-none"></div>
+</div>
+<!-- END: OrnateSurahHeader -->
+<!-- BEGIN: BismillahFrame -->
+<!-- Bismillah with Sacred Divine Name in Red as in reference Image_2 -->
+<div class="text-center my-3 relative" data-purpose="bismillah-block">
+<div class="inline-block px-4 py-0.5">
+<p class="font-quran text-2xl md:text-3xl leading-relaxed text-amber-950 font-semibold tracking-normal">
+            بِسْمِ <span class="allah-red">اللَّهِ</span> الرَّحْمَٰنِ الرَّحِيمِ
+          </p>
+</div>
+</div>
+<!-- END: BismillahFrame -->
+<!-- BEGIN: SacredQuranVerses -->
+<!-- Surah Ali 'Imran Verses with exact colored divine names matching reference image Image_2 -->
+<div class="quran-text text-[1.48rem] md:text-[1.62rem] text-stone-900 font-normal select-text mt-2" data-purpose="quran-verses-content" dir="rtl">
+<!-- الآية 1 -->
+<span>الٓمٓ</span>
+<span class="ayah-num" title="آية ١">١</span>
+<!-- الآية 2: الله & هُوَ in red -->
+<span><span class="allah-red">اللَّهُ</span> لَا إِلَٰهَ إِلَّا <span class="allah-red">هُوَ</span> الْحَيُّ الْقَيُّومُ</span>
+<span class="ayah-num" title="آية ٢">٢</span>
+<!-- الآية 3 -->
+<span>نَزَّلَ عَلَيْكَ الْكِتَابَ بِالْحَقِّ مُصَدِّقًا لِّمَا بَيْنَ يَدَيْهِ وَأَنزَلَ التَّوْرَاةَ وَالْإِنجِيلَ</span>
+<span class="ayah-num" title="آية ٣">٣</span>
+<!-- الآية 4: الله & وَاللَّهُ in red -->
+<span>مِن قَبْلُ هُدًى لِّلنَّاسِ وَأَنزَلَ الْفُرْقَانَ<span class="pause-mark">ۗ</span> إِنَّ الَّذِينَ كَفَرُوا بِآيَاتِ <span class="allah-red">اللَّهِ</span> لَهُمْ عَذَابٌ شَدِيدٌ<span class="pause-mark">ۗ</span> وَ<span class="allah-red">اللَّهُ</span> عَزِيزٌ ذُو انتِقَامٍ</span>
+<span class="ayah-num" title="آية ٤">٤</span>
+<!-- الآية 5: اللَّهَ in red -->
+<span>إِنَّ <span class="allah-red">اللَّهَ</span> لَا يَخْفَىٰ عَلَيْهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ</span>
+<span class="ayah-num" title="آية ٥">٥</span>
+<!-- الآية 6: هُوَ in red -->
+<span><span class="allah-red">هُوَ</span> الَّذِي يُصَوِّرُكُمْ فِي الْأَرْحَامِ كَيْفَ يَشَاءُ<span class="pause-mark">ۚ</span> لَا إِلَٰهَ إِلَّا <span class="allah-red">هُوَ</span> الْعَزِيزُ الْحَكِيمُ</span>
+<span class="ayah-num" title="آية ٦">٦</span>
+<!-- مقتطف من الآية 7 ومطلع الآية 8 تكراراً للنموذج في الصورة: رَبَّنَا in red -->
+<span>... وَمَا يَعْلَمُ تَأْوِيلَهُ إِلَّا <span class="allah-red">اللَّهُ</span><span class="pause-mark">ۗ</span> وَالرَّاسِخُونَ فِي الْعِلْمِ يَقُولُونَ آمَنَّا بِهِ كُلٌّ مِّنْ عِندِ <span class="allah-red">رَبِّنَا</span><span class="pause-mark">ۗ</span> وَمَا يَذَّكَّرُ إِلَّا أُولُو الْأَلْبَابِ</span>
+<span class="ayah-num" title="آية ٧">٧</span>
+<span><span class="allah-red">رَبَّنَا</span> لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً<span class="pause-mark">ۚ</span> إِنَّكَ أَنتَ الْوَهَّابُ</span>
+<span class="ayah-num" title="آية ٨">٨</span>
+<span><span class="allah-red">رَبَّنَا</span> إِنَّكَ جَامِعُ النَّاسِ لِيَوْمٍ لَّا رَيْبَ فِيهِ<span class="pause-mark">ۚ</span> إِنَّ <span class="allah-red">اللَّهَ</span> لَا يُخْلِفُ الْمِيعَادَ</span>
+<span class="ayah-num" title="آية ٩">٩</span>
+</div>
+<!-- END: SacredQuranVerses -->
+<!-- BEGIN: InteractivePaperCurlCorner -->
+<!-- 3D folded corner simulation enabling page turn gesture -->
+<div class="page-curl-corner flex items-end justify-start p-1.5" data-purpose="interactive-page-curl" id="cornerCurl" title="اطوِ الصفحة للتقليب">
+<span class="text-[9px] font-bold text-amber-900/80 -rotate-45 select-none pr-1 pb-1">
+          اقلب 🍃
+        </span>
+</div>
+<!-- END: InteractivePaperCurlCorner -->
+<!-- Page Bottom Center Number -->
+<div class="absolute bottom-2 left-0 right-0 text-center font-amiri text-xs text-amber-950 font-bold">
+        - ٥٠ -
+      </div>
+</article>
+<!-- END: MushafPhysicalPage -->
+<!-- BEGIN: FloatingReaderBar -->
+<!-- Reader controls: Audio, leafing bar & page turns -->
+<nav class="w-full bg-stone-950/95 backdrop-blur text-amber-100 p-2.5 rounded-b-xl border-t border-amber-900/30 flex flex-col gap-2 shadow-xl" data-purpose="bottom-reader-controls">
+<!-- Audio Reciter Bar -->
+<div class="flex items-center justify-between bg-stone-900/90 px-3 py-1.5 rounded-lg border border-amber-800/30 text-xs">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-amber-600 hover:bg-amber-500 text-stone-950 flex items-center justify-center transition active:scale-95 shadow" id="btnPlayAudio">
+<svg class="w-3.5 h-3.5 translate-x-[-0.5px]" fill="currentColor" id="playIcon" viewbox="0 0 24 24">
+<polygon points="5 3 19 12 5 21 5 3"></polygon>
+</svg>
+</button>
+<div>
+<div class="font-bold text-amber-200">الشيخ محمود خليل الحصري</div>
+<div class="text-[10px] text-amber-400/80">تلاوة مرتلة برواية حفص عن عاصم</div>
+</div>
+</div>
+<div class="text-[11px] text-stone-300 font-mono" id="audioTimer">
+          00:18 / 03:42
+        </div>
+</div>
+<!-- Page Quick Switcher & Turn Buttons -->
+<div class="flex items-center justify-between pt-1">
+<button class="px-3 py-1.5 rounded bg-stone-900 hover:bg-stone-800 text-amber-300 text-xs border border-amber-800/30 flex items-center gap-1 active:scale-95 transition" id="btnPrevPage">
+<span>الصفحة السابقة</span>
+<span class="text-[10px]">‹</span>
+</button>
+<div class="text-xs text-amber-300 font-amiri text-center">
+          صفحة <span class="font-bold text-amber-100">٥٠</span> مِن <span class="text-stone-400">٦٠٤</span>
+</div>
+<button class="px-3 py-1.5 rounded bg-amber-700/80 hover:bg-amber-600 text-amber-100 text-xs border border-amber-600/40 flex items-center gap-1 active:scale-95 transition font-semibold" id="btnNextPage">
+<span class="text-[10px]">›</span>
+<span>الصفحة التالية</span>
+</button>
+</div>
+</nav>
+<!-- END: FloatingReaderBar -->
+<!-- Bookmark saved toast -->
+<div class="fixed top-14 left-1/2 -translate-x-1/2 bg-amber-800 text-white text-xs px-4 py-1.5 rounded-full shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none z-50" id="toastBookmark">
+      تم حفظ العلامة المرجعية بنجاح
+    </div>
+</main>
+<!-- END: MainMobileContainer -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="page-curl-and-interactions">
+    document.addEventListener('DOMContentLoaded', () => {
+      const page = document.getElementById('mushafPage');
+      const cornerCurl = document.getElementById('cornerCurl');
+      const btnNext = document.getElementById('btnNextPage');
+      const btnPrev = document.getElementById('btnPrevPage');
+      const btnTexture = document.getElementById('btnPaperTexture');
+      const btnBookmark = document.getElementById('btnBookmark');
+      const toastBookmark = document.getElementById('toastBookmark');
+      const btnPlay = document.getElementById('btnPlayAudio');
+      const playIcon = document.getElementById('playIcon');
+      
+      let isPlaying = false;
+      let isNight = false;
+
+      // Realistic 3D Page Turn Trigger
+      function triggerPageTurn(direction) {
+        page.classList.add('page-turning');
+        
+        // Haptic feedback if supported on modern mobile iOS/WebKit
+        if (navigator.vibrate) {
+          navigator.vibrate(18);
+        }
+
+        setTimeout(() => {
+          page.classList.remove('page-turning');
+        }, 650);
+      }
+
+      cornerCurl.addEventListener('click', () => {
+        triggerPageTurn('next');
+      });
+
+      btnNext.addEventListener('click', () => {
+        triggerPageTurn('next');
+      });
+
+      btnPrev.addEventListener('click', () => {
+        triggerPageTurn('prev');
+      });
+
+      // Paper Texture / Night Mode toggle
+      btnTexture.addEventListener('click', () => {
+        isNight = !isNight;
+        if (isNight) {
+          page.classList.add('night-mode');
+        } else {
+          page.classList.remove('night-mode');
+        }
+      });
+
+      // Bookmark Toast notification
+      btnBookmark.addEventListener('click', () => {
+        toastBookmark.classList.remove('opacity-0');
+        setTimeout(() => {
+          toastBookmark.classList.add('opacity-0');
+        }, 2000);
+      });
+
+      // Audio Play / Pause Toggle
+      btnPlay.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
+        } else {
+          playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"></polygon>';
+        }
+      });
+
+      // Simple swipe gesture for mobile page leafing
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      page.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      page.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+      }, { passive: true });
+
+      function handleGesture() {
+        const threshold = 50;
+        // In RTL: Swipe left = next page, swipe right = previous page
+        if (touchStartX - touchEndX > threshold) {
+          triggerPageTurn('next');
+        } else if (touchEndX - touchStartX > threshold) {
+          triggerPageTurn('prev');
+        }
+      }
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>

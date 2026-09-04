@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Amiri+Quran&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#6f7974", "surface-container-high": "#f1e6dc", "on-primary": "#ffffff", "on-tertiary-container": "#cac4b2", "on-tertiary": "#ffffff", "tertiary": "#3d3a2d", "surface-tint": "#236a55", "primary": "#004333", "secondary": "#785a00", "surface-bright": "#fff8f4", "on-tertiary-fixed-variant": "#4a4739", "surface": "#fff8f4", "tertiary-container": "#555143", "secondary-fixed": "#ffdf9d", "on-tertiary-fixed": "#1e1c10", "on-primary-container": "#8dd2b8", "outline-variant": "#bfc9c3", "on-secondary-fixed": "#251a00", "secondary-container": "#fcce66", "on-secondary-fixed-variant": "#5b4300", "surface-container-lowest": "#ffffff", "surface-container": "#f7ece2", "on-surface-variant": "#3f4944", "surface-dim": "#e3d8ce", "surface-container-low": "#fdf2e7", "surface-variant": "#ece1d7", "error": "#ba1a1a", "tertiary-fixed": "#e9e2cf", "on-error-container": "#93000a", "background": "#fff8f4", "on-secondary-container": "#755700", "primary-fixed-dim": "#8fd4bb", "inverse-on-surface": "#faefe5", "inverse-surface": "#352f29", "surface-container-highest": "#ece1d7", "on-secondary": "#ffffff", "on-error": "#ffffff", "secondary-fixed-dim": "#edc05a", "tertiary-fixed-dim": "#ccc6b4", "on-primary-fixed": "#002117", "primary-fixed": "#abf1d6", "error-container": "#ffdad6", "primary-container": "#0f5c48", "on-primary-fixed-variant": "#00513e", "inverse-primary": "#8fd4bb", "on-surface": "#201b15", "on-background": "#201b15" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "max-content-width": "780px", "space-2xl": "3rem", "space-xs": "0.5rem", "space-2xs": "0.25rem", "gutter-desktop": "2rem", "space-md": "1rem", "space-sm": "0.75rem", "gutter-mobile": "1rem", "space-xl": "2rem", "space-lg": "1.5rem" }, fontFamily: { "headline-md": ["IBM Plex Sans Arabic"], "quran-verse-md": ["Amiri Quran"], "label-md": ["IBM Plex Sans Arabic"], "body-lg": ["IBM Plex Sans Arabic"], "body-md": ["IBM Plex Sans Arabic"], "quran-verse-lg": ["Amiri Quran"], "quran-verse-lg-mobile": ["Amiri Quran"], "label-sm": ["IBM Plex Sans Arabic"], "display-lg": ["IBM Plex Sans Arabic"], "headline-sm": ["IBM Plex Sans Arabic"], "surah-title": ["Amiri"] }, fontSize: { "headline-md": ["20px", { lineHeight: "30px", fontWeight: "600" }], "quran-verse-md": ["22px", { lineHeight: "46px", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "quran-verse-lg": ["32px", { lineHeight: "68px", fontWeight: "400" }], "quran-verse-lg-mobile": ["24px", { lineHeight: "52px", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "500" }], "display-lg": ["26px", { lineHeight: "36px", fontWeight: "600" }], "headline-sm": ["17px", { lineHeight: "26px", fontWeight: "600" }], "surah-title": ["28px", { lineHeight: "40px", fontWeight: "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(32,27,21,0.05)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between max-w-max-content-width mx-auto"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-secondary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4XVuvj1-TmfCvtPhoWJqmPUhNdfTUUXYRP0KsGV7igPA7ky7k2WVehfO5SlrP_jlv_c_Pv9qYUJLLlSXRHagrD6r0-ESnnEYFKRVFMtWlvI1gpapkbgQ0ryfynYVj0soURbSelcJBe112cI0HlVHAhJSJnWu7XBCs5qFRPCU0d-ZYkYfuv9O99hJYmLKWVOG2b1ecyuHtfRRgSva6ywLdMULmYTk-1grs4dkdqTxkmnndmKKZx6eteQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">نور القرآن</span><span class="font-label-sm text-label-sm text-on-surface-variant">الحفظ</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="الإشعارات" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="الإعدادات السريعة" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">tune</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface max-w-max-content-width mx-auto px-gutter-mobile"><div class="flex flex-col w-full gap-space-lg pb-10 text-right select-none">
+<!-- Top Bar / Sub-Navigation -->
+<div class="flex items-center justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<button aria-label="الرجوع" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95 touch-manipulation" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">الإحصائيات والأوسمة</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">تأمّل مسيرتك مع كتاب الله في سكينة واطمئنان</p>
+</div>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-secondary hover:bg-surface-container-high transition-all shadow-sm active:scale-95 touch-manipulation" id="shareRugBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span class="font-label-md text-label-md">مشاركة السجادة</span>
+</button>
+</div>
+<!-- Warm Reassuring Reflection Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm shadow-sm relative overflow-hidden">
+<div class="w-8 h-8 rounded-full bg-secondary-container/60 text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary">سكينة الإقبال على القرآن</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        «عدتَ من جديد، أهلاً بك وسكينة القلب في القرآن. كل دقيقة تتلوها نورٌ لقلبك، وثباتٌ لروحك.»
+      </p>
+</div>
+</div>
+<!-- Summary KPI Bento Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Continuity Card -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">الاستمرار في الورد</span>
+<div class="w-7 h-7 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-display-lg text-display-lg text-primary">١٢</span>
+<span class="font-body-md text-body-md text-on-surface">يوماً متواصلاً</span>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">history_edu</span>
+<span class="font-label-sm text-label-sm">ورد الفجر والمغرب</span>
+</div>
+</div>
+<!-- Weekly Engagement -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">هذا الأسبوع</span>
+<div class="w-7 h-7 rounded-full bg-secondary-container/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-display-lg text-display-lg text-primary">٥٦</span>
+<span class="font-body-md text-body-md text-on-surface">دقيقة تلاوة</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">date_range</span>
+<span class="font-label-sm text-label-sm">٤ أيام تلاوة وتدبّر</span>
+</div>
+</div>
+<!-- Total Khatmahs & Memorization (Spans 2 columns) -->
+<div class="col-span-2 p-space-md rounded-xl bg-surface-container flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">المسيرة المباركة</span>
+<span class="font-headline-sm text-headline-sm text-primary truncate">ختمة كاملة مباركة · ٤ أجزاء متقنة</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md text-secondary">عام ١٤٤٦ هـ</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">٣ ختمات سابقة</span>
+</div>
+</div>
+</div>
+<!-- THE HIGHLIGHT: سجادة التلاوة والاستمرار (Direction D2) -->
+<div class="flex flex-col rounded-xl bg-surface-container p-space-md shadow-sm gap-space-md">
+<!-- Heatmap Card Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">pattern</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">سجادة التلاوة والاستمرار</h2>
+</div>
+<!-- View Switcher Toggle -->
+<div class="flex items-center p-0.5 rounded-full bg-surface-container-high text-on-surface-variant">
+<button class="px-2.5 py-1 rounded-full text-primary bg-surface-container-lowest font-label-sm text-label-sm shadow-xs transition-all" id="viewRugBtn" type="button">
+          السجادة
+        </button>
+<button class="px-2.5 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-all" id="viewGridBtn" type="button">
+          التقويم
+        </button>
+</div>
+</div>
+<!-- Carpet Tessellation Frame with Arch (Mihrab) & Fringe Tassels -->
+<div class="relative flex flex-col items-center bg-surface-container-low rounded-xl p-space-sm pt-space-md shadow-inner overflow-hidden">
+<!-- Top Fringe / Tassel Line -->
+<div class="w-full flex justify-between px-2 text-secondary/40 h-2 select-none mb-2">
+<div class="flex gap-1 w-full justify-around">
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+</div>
+</div>
+<!-- Mihrab Arch Silhouette Indicator -->
+<div class="flex flex-col items-center mb-space-xs text-secondary">
+<svg class="opacity-75" fill="none" height="24" viewbox="0 0 48 24" width="48">
+<path d="M4 24C4 13.5 12.95 5 24 5C35.05 5 44 13.5 44 24" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1.2"></path>
+<path d="M24 0L26 3.5H22L24 0Z" fill="currentColor"></path>
+</svg>
+<span class="font-label-sm text-label-sm text-secondary/90 tracking-widest mt-0.5">محراب الورد الأسبوعي</span>
+</div>
+<!-- Islamic 12-Week Carpet Tessellation Grid -->
+<div class="w-full grid grid-cols-12 gap-1.5 p-2 bg-surface-container-lowest/80 rounded-lg backdrop-blur-sm" id="carpetTessellation">
+<!-- Week Columns generated with spiritual color levels & Friday Highlights -->
+<!-- Column 1 (Oldest) -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-surface-container-high" title="السبت"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/20" title="الأحد"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/40" title="الاثنين"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/60" title="الثلاثاء"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/30" title="الأربعاء"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/70" title="الخميس"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة - سورة الكهف">✦</div>
+</div>
+<!-- Column 2 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/30"></div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-high"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/50"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/40"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/60"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 3 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/60"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/70"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/40"></div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-high"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 4 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/40"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/50"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/50"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/70"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 5 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-surface-container-high"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/30"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/60"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 6 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/50"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/60"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/70"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 7 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/60"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/70"></div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-high"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/50"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 8 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/70"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 9 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/70"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/70"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 10 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/80"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 11 -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[9px]" title="الجمعة">✦</div>
+</div>
+<!-- Column 12 (Current Week) -->
+<div class="flex flex-col gap-1.5 items-center">
+<div class="w-5 h-5 rounded-sm bg-primary-container/100 shadow-xs"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/100"></div>
+<div class="w-5 h-5 rounded-sm bg-primary-container/90"></div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-high opacity-50"></div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-high opacity-50"></div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-high opacity-50"></div>
+</div>
+</div>
+<!-- Bottom Fringe / Tassel Line -->
+<div class="w-full flex justify-between px-2 text-secondary/40 h-2 select-none mt-3">
+<div class="flex gap-1 w-full justify-around">
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/30 rounded-full"></span>
+<span class="w-0.5 h-2 bg-secondary/40 rounded-full"></span>
+</div>
+</div>
+</div>
+<!-- Pious Level Legend -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">مستويات الإقبال:</span>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-xs bg-surface-container-high"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">قليل</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-xs bg-primary-container/40"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">معتدل</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-xs bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ورد كامل</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-xs bg-secondary-container text-[8px] text-center text-on-secondary-container leading-none">✦</span>
+<span class="font-label-sm text-label-sm text-secondary">ختم وسورة الكهف</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 30 Juz Coverage Ruler (خريطة الأجزاء الثلاثين) -->
+<div class="flex flex-col rounded-xl bg-surface-container p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">book</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">خريطة الأجزاء الثلاثين</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">
+        ٣٦٪ مكتمل ومراجع
+      </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+      مسار الختم والحفظ عبر أجزاء المصحف الشريف:
+    </p>
+<!-- Visual 30-Segment Strip (6 Complete, 4 In-Progress, 20 Upcoming) -->
+<div class="grid grid-cols-10 gap-1 my-1">
+<!-- 1-6 Complete (Emerald Dark) -->
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="الجزء ١ (مكتمل)">١</div>
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="الجزء ٢ (مكتمل)">٢</div>
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="الجزء ٣ (مكتمل)">٣</div>
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="الجزء ٤ (مكتمل)">٤</div>
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="الجزء ٥ (مكتمل)">٥</div>
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="الجزء ٦ (مكتمل)">٦</div>
+<!-- 7-10 In-Progress (Gold Tint) -->
+<div class="h-6 rounded-xs bg-secondary-container flex items-center justify-center text-[10px] text-on-secondary-container font-medium" title="الجزء ٧ (قيد المراجعة)">٧</div>
+<div class="h-6 rounded-xs bg-secondary-container flex items-center justify-center text-[10px] text-on-secondary-container font-medium" title="الجزء ٨ (قيد المراجعة)">٨</div>
+<div class="h-6 rounded-xs bg-secondary-container flex items-center justify-center text-[10px] text-on-secondary-container font-medium" title="الجزء ٩ (قيد المراجعة)">٩</div>
+<div class="h-6 rounded-xs bg-secondary-container flex items-center justify-center text-[10px] text-on-secondary-container font-medium" title="الجزء ١٠ (قيد المراجعة)">١٠</div>
+<!-- 11-20 Upcoming (Subtle Surface) -->
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١١</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٢</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٣</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٤</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٥</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٦</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٧</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٨</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">١٩</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٠</div>
+<!-- 21-30 Upcoming (Including Amma & Tabarak preview) -->
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢١</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٢</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٣</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٤</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٥</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٦</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٧</div>
+<div class="h-6 rounded-xs bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">٢٨</div>
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="جزء تبارك (متقن)">٢٩</div>
+<div class="h-6 rounded-xs bg-primary flex items-center justify-center text-[10px] text-on-primary font-medium" title="جزء عمّ (متقن)">٣٠</div>
+</div>
+<!-- Breakdown Legend -->
+<div class="flex items-center justify-between text-on-surface-variant pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm">٦ أجزاء تلاوة ومراجعة</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm">٤ أجزاء قيد الحفظ</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-high"></span>
+<span class="font-label-sm text-label-sm">٢٠ جزءاً قادمة</span>
+</div>
+</div>
+</div>
+<!-- أوسمة الإتقان والمواظبة (Sacred Badges in Geometric Tessellation) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">military_tech</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">أوسمة الإتقان والمواظبة</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">٥ أوسمة مُتحققة</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+      رموز هندسية إسلامية تذكارية تجسّد ثبات المسيرة وإخلاص النية:
+    </p>
+<!-- 2-Column Badges Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Badge 1: المُواظِب (Unlocked) -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-2 shadow-sm">
+<!-- 8-Point Islamic Star Tessellation SVG in Gold & Emerald -->
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-full h-full text-secondary" viewbox="0 0 64 64">
+<!-- Outer 8-pointed star constructed from two rotated squares -->
+<rect fill="none" height="36" rx="2" stroke="currentColor" stroke-width="1.5" width="36" x="14" y="14"></rect>
+<rect fill="none" height="36" rx="2" stroke="currentColor" stroke-width="1.5" transform="rotate(45 32 32)" width="36" x="14" y="14"></rect>
+<!-- Inner Emerald Core -->
+<circle class="fill-primary-container" cx="32" cy="32" r="10"></circle>
+<circle class="fill-secondary-container" cx="32" cy="32" r="4"></circle>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">المُواظِب</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">٣٠ يوماً من الاستمرار على الورد</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm">متحقق</span>
+</div>
+<!-- Badge 2: الخاتِم (Unlocked) -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-2 shadow-sm">
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-full h-full text-secondary" viewbox="0 0 64 64">
+<polygon fill="none" points="32,4 39,18 54,18 43,28 47,43 32,34 17,43 21,28 10,18 25,18" stroke="currentColor" stroke-width="1.5"></polygon>
+<polygon fill="none" opacity="0.6" points="32,60 25,46 10,46 21,36 17,21 32,30 47,21 43,36 54,46 39,46" stroke="currentColor" stroke-width="1.2"></polygon>
+<circle class="fill-primary" cx="32" cy="32" r="8"></circle>
+<path d="M30 28 A4 4 0 1 0 34 35 A5 5 0 1 1 30 28" fill="#FCCE66"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">الخاتِم</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">إتمام ختمة كاملة بتوفيق الله</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm">متحقق</span>
+</div>
+<!-- Badge 3: المُرتِّل (Unlocked) -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-2 shadow-sm">
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-full h-full text-secondary" viewbox="0 0 64 64">
+<!-- Arabesque Medallion Contour -->
+<circle cx="32" cy="32" fill="none" r="24" stroke="currentColor" stroke-dasharray="3 2" stroke-width="1.2"></circle>
+<circle class="fill-surface-container-lowest" cx="32" cy="32" r="18" stroke="currentColor" stroke-width="1"></circle>
+<!-- Reverent Soundwave lines -->
+<line stroke="#0F5C48" stroke-linecap="round" stroke-width="2.5" x1="24" x2="24" y1="32" y2="32"></line>
+<line stroke="#0F5C48" stroke-linecap="round" stroke-width="2.5" x1="28" x2="28" y1="26" y2="38"></line>
+<line stroke="#785A00" stroke-linecap="round" stroke-width="2.5" x1="32" x2="32" y1="22" y2="42"></line>
+<line stroke="#0F5C48" stroke-linecap="round" stroke-width="2.5" x1="36" x2="36" y1="27" y2="37"></line>
+<line stroke="#0F5C48" stroke-linecap="round" stroke-width="2.5" x1="40" x2="40" y1="31" y2="33"></line>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">المُرتِّل</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">١٠ ساعات من الاستماع والترتيل</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm">متحقق</span>
+</div>
+<!-- Badge 4: الحافِظ لجزء (Unlocked) -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-2 shadow-sm">
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-full h-full text-secondary" viewbox="0 0 64 64">
+<!-- Octagram Frame -->
+<polygon fill="none" points="32,6 38,18 52,14 48,28 60,34 48,40 52,54 38,50 32,62 26,50 12,54 16,40 4,34 16,28 12,14 26,18" stroke="currentColor" stroke-width="1.2"></polygon>
+<circle class="fill-primary-container" cx="32" cy="34" r="12"></circle>
+<!-- Open Mushaf silhouette inside -->
+<path d="M26 36 C28 33 31 33 32 35 C33 33 36 33 38 36 V30 C36 28 33 28 32 30 C31 28 28 28 26 30 Z" fill="#FFDF9D"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">الحافِظ لجزء</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">إتقان جزء تبارك بنسبة ٩٧٪</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm">متحقق</span>
+</div>
+<!-- Badge 5: صاحب الكهف (Unlocked) -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col items-center text-center gap-2 shadow-sm">
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-full h-full text-secondary" viewbox="0 0 64 64">
+<!-- Andalusian Minaret Lamp Motif -->
+<rect fill="none" height="24" rx="3" stroke="currentColor" stroke-width="1.4" width="24" x="20" y="20"></rect>
+<circle cx="32" cy="32" fill="none" r="16" stroke="currentColor" stroke-dasharray="2 3" stroke-width="1"></circle>
+<!-- Glowing Lantern flame -->
+<path class="fill-secondary-container" d="M32 24 C28 29 28 35 32 38 C36 35 36 29 32 24 Z"></path>
+<circle class="fill-secondary" cx="32" cy="33" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">صاحب الكهف</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">المواظبة على الكهف كل جمعة</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm">متحقق</span>
+</div>
+<!-- Badge 6: المتدبّر (Locked/In Progress) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low/70 flex flex-col items-center text-center gap-2 shadow-xs opacity-75">
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-full h-full text-outline-variant" viewbox="0 0 64 64">
+<circle cx="32" cy="32" fill="none" r="24" stroke="currentColor" stroke-dasharray="4 3" stroke-width="1.2"></circle>
+<!-- Open Parchment Scroll -->
+<rect fill="none" height="20" rx="2" stroke="currentColor" stroke-width="1.2" width="20" x="22" y="22"></rect>
+<line stroke="currentColor" stroke-width="1" x1="26" x2="38" y1="28" y2="28"></line>
+<line stroke="currentColor" stroke-width="1" x1="26" x2="35" y1="32" y2="32"></line>
+<!-- Lock Icon -->
+<circle class="fill-surface-container-high" cx="44" cy="44" r="7"></circle>
+<path d="M42 43 V41 A2 2 0 0 1 46 41 V43" fill="none" stroke="currentColor" stroke-width="1.2"></path>
+<rect fill="currentColor" height="5" rx="1" width="6" x="41" y="43"></rect>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">المتدبّر</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">تدوين ٥٠ تأملاً قرآنياً</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">٢٤ / ٥٠ خاطرة</span>
+</div>
+</div>
+</div>
+<!-- Privacy & Reverence Data Statement -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lock_person</span>
+<div class="flex flex-col gap-1 min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary">خصوصية تامة واحتسابٌ لله</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          إحصاءاتك خاصة ومحفوظة على جهازك فقط — لا مشاركة سحابية ولا متصدرين أو منافسة في عبادة. تقبل الله طاعاتكم وثبّت قلوبكم.
+        </p>
+</div>
+</div>
+<!-- Export Report Button -->
+<button class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary text-secondary-fixed hover:bg-primary-container transition-all active:scale-[0.99] touch-manipulation shadow-sm" id="exportReportBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+<span class="font-label-md text-label-md">تصدير تقرير الإنجاز الشهري (PDF / صورة)</span>
+</button>
+</div>
+</div>
+<script>
+  // Micro-interactions & View Toggling
+  (function() {
+    const viewRugBtn = document.getElementById('viewRugBtn');
+    const viewGridBtn = document.getElementById('viewGridBtn');
+    const carpet = document.getElementById('carpetTessellation');
+    const shareRugBtn = document.getElementById('shareRugBtn');
+    const exportReportBtn = document.getElementById('exportReportBtn');
+
+    if (viewRugBtn && viewGridBtn && carpet) {
+      viewGridBtn.addEventListener('click', () => {
+        viewGridBtn.className = 'px-2.5 py-1 rounded-full text-primary bg-surface-container-lowest font-label-sm text-label-sm shadow-xs transition-all';
+        viewRugBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-all';
+        carpet.classList.add('opacity-90');
+      });
+
+      viewRugBtn.addEventListener('click', () => {
+        viewRugBtn.className = 'px-2.5 py-1 rounded-full text-primary bg-surface-container-lowest font-label-sm text-label-sm shadow-xs transition-all';
+        viewGridBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-all';
+        carpet.classList.remove('opacity-90');
+      });
+    }
+
+    if (shareRugBtn) {
+      shareRugBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: 'سجادة تلاوة القرآن الكريم',
+              text: 'تأمّل مسيرتي الهادئة مع كتاب الله عبر تطبيق نور القرآن.',
+              url: window.location.href,
+            });
+          } catch (err) {
+            // Dismissed or unsupported silently
+          }
+        } else {
+          alert('تم نسخ ملخص سجادة الإنجاز لمشاركتها بسلام وسكينة.');
+        }
+      });
+    }
+
+    if (exportReportBtn) {
+      exportReportBtn.addEventListener('click', () => {
+        const originalText = exportReportBtn.innerHTML;
+        exportReportBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span class="font-label-md text-label-md">جاري إعداد التقرير التذكاري...</span>';
+        setTimeout(() => {
+          exportReportBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span class="font-label-md text-label-md">تم حفظ التقرير في جهازك بنجاح</span>';
+          setTimeout(() => {
+            exportReportBtn.innerHTML = originalText;
+          }, 2400);
+        }, 1100);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-2xl shadow-[0_-4px_24px_rgba(32,27,21,0.06)]" data-active-classes="text-primary font-semibold"><div class="relative h-16 max-w-max-content-width mx-auto px-space-xs flex items-center justify-between"><a class="flex-1 flex flex-col items-center justify-center h-full gap-0.5 text-on-surface-variant transition-all touch-manipulation" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">الرئيسية</span></a><a class="flex-1 flex flex-col items-center justify-center h-full gap-0.5 text-on-surface-variant transition-all touch-manipulation" data-path="quran-reader" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm">المصحف</span></a><div class="flex-1 flex flex-col items-center justify-end h-full pb-1 relative"><a class="absolute -top-3 flex flex-col items-center justify-center group touch-manipulation focus:outline-none" data-path="tasmee-recitation" href="#"><div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_10px_24px_rgba(15,92,72,0.35)] ring-2 ring-secondary/40 group-active:scale-95 transition-transform"><span class="material-symbols-outlined text-[28px] text-on-primary">mic</span></div><span class="font-label-sm text-label-sm text-primary font-medium mt-1">التسميع</span></a></div><a class="flex-1 flex flex-col items-center justify-center h-full gap-0.5 text-on-surface-variant transition-all touch-manipulation" data-path="hifz-memorization" href="#"><span class="material-symbols-outlined text-[22px]">auto_stories</span><span class="font-label-sm text-label-sm">الحفظ</span></a><a class="flex-1 flex flex-col items-center justify-center h-full gap-0.5 text-on-surface-variant transition-all touch-manipulation" data-path="settings" href="#"><span class="material-symbols-outlined text-[22px]">settings</span><span class="font-label-sm text-label-sm">الإعدادات</span></a></div></nav></body></html>
