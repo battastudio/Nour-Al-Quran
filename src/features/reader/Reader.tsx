@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import type { SurahFile, Ayah } from '@/data/types';
 import { loadSurah, basmala } from '@/data/loader';
 import { AyahText } from '@/components/AyahText';
@@ -16,6 +16,8 @@ import { useWakeLock } from '@/lib/wakeLock';
 import { logActivity } from '@/store/activity';
 import { TafsirSheet } from '@/features/tafsir/TafsirSheet';
 import { WordSheet } from '@/features/words/WordSheet';
+import { hasSimilar } from '@/features/similar/similarData';
+import { ShareSheet } from '@/features/share/ShareSheet';
 
 const HL_CLASS: Record<Highlight, string> = {
   yellow: 'bg-secondary-container/50',
@@ -26,11 +28,13 @@ const HL_CLASS: Record<Highlight, string> = {
 
 export function Reader() {
   const { surah = '1', ayah } = useParams();
+  const navigate = useNavigate();
   const surahNum = Number(surah);
   const [file, setFile] = useState<SurahFile | null>(null);
   const [selected, setSelected] = useState<Ayah | null>(null);
   const [tafsirFor, setTafsirFor] = useState<Ayah | null>(null);
   const [wordsFor, setWordsFor] = useState<Ayah | null>(null);
+  const [shareFor, setShareFor] = useState<Ayah | null>(null);
 
   const readerMode = useSettings((s) => s.readerMode);
   const setReaderMode = useSettings((s) => s.setReaderMode);
@@ -181,6 +185,13 @@ export function Reader() {
             />
             <ActionRow icon="menu_book" label="التفسير" onClick={() => { setTafsirFor(selected); setSelected(null); }} />
             <ActionRow icon="translate" label="المفردات" onClick={() => { setWordsFor(selected); setSelected(null); }} />
+            {hasSimilar(selected.s, selected.a) && (
+              <ActionRow
+                icon="join_inner"
+                label="المتشابهات"
+                onClick={() => navigate(`/similar/${selected.s}/${selected.a}`)}
+              />
+            )}
             <ActionRow
               icon="content_copy"
               label="نسخ الآية"
@@ -189,6 +200,7 @@ export function Reader() {
                 toast('نُسخت الآية');
               }}
             />
+            <ActionRow icon="share" label="مشاركة" onClick={() => { setShareFor(selected); setSelected(null); }} />
             <div className="mt-space-xs flex items-center gap-space-sm px-space-2xs">
               <span className="font-sans text-label-md text-on-surface-variant">تظليل:</span>
               {(['yellow', 'green', 'blue', 'pink'] as Highlight[]).map((h) => (
@@ -208,6 +220,7 @@ export function Reader() {
 
       <TafsirSheet ayah={tafsirFor} surahName={meta.name} onClose={() => setTafsirFor(null)} />
       <WordSheet ayah={wordsFor} surahName={meta.name} onClose={() => setWordsFor(null)} />
+      <ShareSheet ayah={shareFor} surahName={meta.name} onClose={() => setShareFor(null)} />
     </div>
   );
 }

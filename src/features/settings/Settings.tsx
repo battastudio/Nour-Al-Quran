@@ -6,9 +6,11 @@ import { toast } from '@/components/Toast';
 import { exportData, importData } from './backup';
 
 const LINKS = [
+  { to: '/settings/account', icon: 'person', label: 'الملف الشخصي والمزامنة' },
   { to: '/settings/reading', icon: 'text_fields', label: 'الخط والعرض والسمات' },
   { to: '/settings/notifications', icon: 'notifications', label: 'التنبيهات والأذان' },
   { to: '/downloads', icon: 'download', label: 'التنزيلات دون اتصال' },
+  { to: '/circles', icon: 'groups', label: 'المقارئ والحلقات' },
 ];
 
 export function Settings() {

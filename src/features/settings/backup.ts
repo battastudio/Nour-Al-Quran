@@ -2,7 +2,17 @@ import { get as idbGet, set as idbSet } from 'idb-keyval';
 
 // Phase-1 sync = "your data stays on your device" + manual JSON export/import.
 // These keys are the persisted zustand stores.
-const KEYS = ['nour-settings', 'nour-progress', 'nour-location', 'nour-library'];
+const KEYS = [
+  'nour-settings',
+  'nour-progress',
+  'nour-location',
+  'nour-library',
+  'nour-hifz',
+  'nour-khatmah',
+  'nour-activity',
+  'nour-downloads',
+  'nour-profile',
+];
 
 export async function exportData(): Promise<void> {
   const bundle: Record<string, unknown> = { app: 'nour-alquran', v: 1, exported: new Date().toISOString() };

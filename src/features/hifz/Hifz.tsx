@@ -120,9 +120,14 @@ export function Hifz() {
           <h2 className="mb-space-sm font-sans text-headline-sm text-on-surface">محفوظاتي</h2>
           <ul className="flex flex-col gap-space-2xs">
             {bySurah.map(([s, count]) => (
-              <li key={s} className="flex items-center justify-between rounded-xl bg-surface-container-low px-space-md py-space-sm">
-                <span className="font-title text-headline-sm text-on-surface">سورة {getSurahMeta(s)?.name}</span>
-                <span className="font-sans text-label-md text-on-surface-variant">{num(count)} آية</span>
+              <li key={s}>
+                <Link
+                  to={`/hifz/path/${s}`}
+                  className="flex items-center justify-between rounded-xl bg-surface-container-low px-space-md py-space-sm active:bg-surface-container"
+                >
+                  <span className="font-title text-headline-sm text-on-surface">سورة {getSurahMeta(s)?.name}</span>
+                  <span className="font-sans text-label-md text-on-surface-variant">{num(count)} آية</span>
+                </Link>
               </li>
             ))}
           </ul>

@@ -24,15 +24,21 @@ import { Drive } from '@/features/drive/Drive';
 import { Night } from '@/features/night/Night';
 import { Waqf } from '@/features/lab/Waqf';
 import { Khatmah } from '@/features/khatmah/Khatmah';
+import { SurahPath } from '@/features/hifz/SurahPath';
+import { Similar } from '@/features/similar/Similar';
+import { Account } from '@/features/settings/Account';
+import { Circles } from '@/features/circles/Circles';
 import { ComingSoon } from '@/features/_shared/ComingSoon';
+import { MiniPlayer } from '@/features/audio/MiniPlayer';
 import { useInAppAdhan } from '@/notifications/inApp';
 
-// Global chrome (toasts + in-app adhan) that outlives route changes.
+// Global chrome (toasts, mini audio player, in-app adhan) that outlives route changes.
 function RootChrome() {
   useInAppAdhan();
   return (
     <>
       <Outlet />
+      <MiniPlayer />
       <ToastHost />
     </>
   );
@@ -49,6 +55,9 @@ export const router = createHashRouter([
           { path: 'read', element: <SurahIndex />, handle: { title: 'المصحف' } },
           { path: 'hifz', element: <Hifz />, handle: { title: 'الحفظ والمراجعة' } },
           { path: 'hifz/review', element: <HifzReview />, handle: { title: 'المراجعة' } },
+          { path: 'hifz/path/:surah', element: <SurahPath />, handle: { title: 'مسار الإتقان' } },
+          { path: 'similar/:s/:a', element: <Similar />, handle: { title: 'المتشابهات' } },
+          { path: 'circles', element: <Circles />, handle: { title: 'الحلقات' } },
           { path: 'prayer', element: <Prayer />, handle: { title: 'مواقيت الصلاة' } },
           { path: 'prayer/qibla', element: <Qibla />, handle: { title: 'القبلة' } },
           { path: 'search', element: <Search />, handle: { title: 'البحث' } },
@@ -64,6 +73,7 @@ export const router = createHashRouter([
           { path: 'settings', element: <Settings />, handle: { title: 'الإعدادات' } },
           { path: 'settings/reading', element: <ReadingSettings />, handle: { title: 'الخط والعرض والسمات' } },
           { path: 'settings/notifications', element: <NotificationSettings />, handle: { title: 'التنبيهات والأذان' } },
+          { path: 'settings/account', element: <Account />, handle: { title: 'الملف الشخصي والمزامنة' } },
         ],
       },
       {
