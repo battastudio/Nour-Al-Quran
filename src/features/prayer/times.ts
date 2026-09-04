@@ -1,4 +1,4 @@
-import { CalculationMethod, Coordinates, PrayerTimes, Madhab, Qibla } from 'adhan';
+import { CalculationMethod, Coordinates, PrayerTimes, Madhab, Qibla, SunnahTimes } from 'adhan';
 import type { CalcMethod, Madhab as MadhabPref, PrayerKey } from '@/store/location';
 
 export type PrayerColumn = PrayerKey | 'sunrise';
@@ -60,4 +60,22 @@ export function nextPrayer(
 
 export function qiblaDirection(lat: number, lng: number): number {
   return Qibla(new Coordinates(lat, lng));
+}
+
+/** Middle and last-third of the night (for qiyām) for the current night. */
+export function nightThirds(
+  date: Date,
+  lat: number,
+  lng: number,
+  method: CalcMethod,
+  madhab: MadhabPref,
+): { middle: Date; lastThird: Date; maghrib: Date; fajr: Date } {
+  const pt = dayTimes(date, lat, lng, method, madhab);
+  const sunnah = new SunnahTimes(pt);
+  return {
+    middle: sunnah.middleOfTheNight,
+    lastThird: sunnah.lastThirdOfTheNight,
+    maghrib: pt.maghrib,
+    fajr: pt.fajr,
+  };
 }

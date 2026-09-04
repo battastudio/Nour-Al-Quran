@@ -13,7 +13,9 @@ import { useProgress } from '@/store/progress';
 import { useLibrary, ayahKey, type Highlight } from '@/store/library';
 import { usePlayer } from '@/features/audio/player';
 import { useWakeLock } from '@/lib/wakeLock';
+import { logActivity } from '@/store/activity';
 import { TafsirSheet } from '@/features/tafsir/TafsirSheet';
+import { WordSheet } from '@/features/words/WordSheet';
 
 const HL_CLASS: Record<Highlight, string> = {
   yellow: 'bg-secondary-container/50',
@@ -28,6 +30,7 @@ export function Reader() {
   const [file, setFile] = useState<SurahFile | null>(null);
   const [selected, setSelected] = useState<Ayah | null>(null);
   const [tafsirFor, setTafsirFor] = useState<Ayah | null>(null);
+  const [wordsFor, setWordsFor] = useState<Ayah | null>(null);
 
   const readerMode = useSettings((s) => s.readerMode);
   const setReaderMode = useSettings((s) => s.setReaderMode);
@@ -58,6 +61,7 @@ export function Reader() {
     if (!file) return;
     const a = ayah ? Number(ayah) : 1;
     setLastRead({ surah: surahNum, ayah: a });
+    logActivity();
     if (readerMode === 'focus') {
       setFocusIdx(Math.max(0, a - 1));
     } else {
@@ -176,6 +180,7 @@ export function Reader() {
               }}
             />
             <ActionRow icon="menu_book" label="التفسير" onClick={() => { setTafsirFor(selected); setSelected(null); }} />
+            <ActionRow icon="translate" label="المفردات" onClick={() => { setWordsFor(selected); setSelected(null); }} />
             <ActionRow
               icon="content_copy"
               label="نسخ الآية"
@@ -202,6 +207,7 @@ export function Reader() {
       </Sheet>
 
       <TafsirSheet ayah={tafsirFor} surahName={meta.name} onClose={() => setTafsirFor(null)} />
+      <WordSheet ayah={wordsFor} surahName={meta.name} onClose={() => setWordsFor(null)} />
     </div>
   );
 }

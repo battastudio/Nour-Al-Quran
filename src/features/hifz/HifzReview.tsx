@@ -4,6 +4,7 @@ import { Icon } from '@/components/Icon';
 import { AyahText } from '@/components/AyahText';
 import { Skeleton } from '@/components/Skeleton';
 import { useHifz } from '@/store/hifz';
+import { logActivity } from '@/store/activity';
 import { useNum } from '@/store/settings';
 import { loadSurah, getSurahMeta } from '@/data/loader';
 import type { Ayah } from '@/data/types';
@@ -52,6 +53,7 @@ export function HifzReview() {
 
   const onGrade = (g: Grade) => {
     gradeCard(key, g);
+    logActivity();
     setI(i + 1);
   };
 

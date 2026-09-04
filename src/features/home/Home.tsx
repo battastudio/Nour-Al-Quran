@@ -25,6 +25,9 @@ const QUICK = [
   { to: '/prayer/qibla', icon: 'explore', label: 'القبلة' },
   { to: '/search', icon: 'search', label: 'البحث' },
   { to: '/khatmah', icon: 'event_repeat', label: 'الختمة' },
+  { to: '/tasbih', icon: 'touch_app', label: 'المسبحة' },
+  { to: '/night', icon: 'bedtime', label: 'قيام الليل' },
+  { to: '/stats', icon: 'insights', label: 'إحصاءاتي' },
 ];
 
 export function Home() {

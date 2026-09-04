@@ -21,6 +21,8 @@ interface PlayerState {
   playList: (queue: AyahRef[], reciter: string, startIndex?: number) => void;
   toggle: () => void;
   stop: () => void;
+  next: () => void;
+  prev: () => void;
   _advance: () => void;
 }
 
@@ -76,6 +78,14 @@ export const usePlayer = create<PlayerState>((set, get) => {
       if (el) el.currentTime = 0;
       set({ playing: false, current: null });
     },
+    next: () => {
+      const { qi, queue } = get();
+      if (qi + 1 < queue.length) playAt(qi + 1);
+    },
+    prev: () => {
+      const { qi } = get();
+      if (qi > 0) playAt(qi - 1);
+    },
     _advance: () => {
       const { qi, queue } = get();
       if (qi + 1 < queue.length) playAt(qi + 1);
@@ -83,3 +93,11 @@ export const usePlayer = create<PlayerState>((set, get) => {
     },
   };
 });
+
+// Media Session transport controls (lock screen / headset).
+if (typeof navigator !== 'undefined' && 'mediaSession' in navigator) {
+  navigator.mediaSession.setActionHandler('play', () => usePlayer.getState().toggle());
+  navigator.mediaSession.setActionHandler('pause', () => usePlayer.getState().toggle());
+  navigator.mediaSession.setActionHandler('nexttrack', () => usePlayer.getState().next());
+  navigator.mediaSession.setActionHandler('previoustrack', () => usePlayer.getState().prev());
+}

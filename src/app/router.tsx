@@ -14,6 +14,16 @@ import { NotificationSettings } from '@/features/notifications/NotificationSetti
 import { Hifz } from '@/features/hifz/Hifz';
 import { HifzReview } from '@/features/hifz/HifzReview';
 import { Tasmi } from '@/features/tasmi/Tasmi';
+import { Saved } from '@/features/saved/Saved';
+import { Stats } from '@/features/stats/Stats';
+import { Adhkar } from '@/features/adhkar/Adhkar';
+import { Tasbih } from '@/features/adhkar/Tasbih';
+import { Downloads } from '@/features/downloads/Downloads';
+import { Onboarding } from '@/features/onboarding/Onboarding';
+import { Drive } from '@/features/drive/Drive';
+import { Night } from '@/features/night/Night';
+import { Waqf } from '@/features/lab/Waqf';
+import { Khatmah } from '@/features/khatmah/Khatmah';
 import { ComingSoon } from '@/features/_shared/ComingSoon';
 import { useInAppAdhan } from '@/notifications/inApp';
 
@@ -42,12 +52,14 @@ export const router = createHashRouter([
           { path: 'prayer', element: <Prayer />, handle: { title: 'مواقيت الصلاة' } },
           { path: 'prayer/qibla', element: <Qibla />, handle: { title: 'القبلة' } },
           { path: 'search', element: <Search />, handle: { title: 'البحث' } },
-          { path: 'saved', element: <ComingSoon title="العلامات والملاحظات" />, handle: { title: 'المحفوظات' } },
-          { path: 'stats', element: <ComingSoon title="الإحصائيات والأوسمة" />, handle: { title: 'الإحصائيات' } },
-          { path: 'khatmah', element: <ComingSoon title="خطة الختمة" />, handle: { title: 'الختمة' } },
-          { path: 'adhkar', element: <ComingSoon title="الأذكار" />, handle: { title: 'الأذكار' } },
-          { path: 'tasbih', element: <ComingSoon title="المسبحة" />, handle: { title: 'المسبحة' } },
-          { path: 'downloads', element: <ComingSoon title="إدارة التنزيل" />, handle: { title: 'التنزيلات' } },
+          { path: 'saved', element: <Saved />, handle: { title: 'المحفوظات' } },
+          { path: 'stats', element: <Stats />, handle: { title: 'الإحصائيات' } },
+          { path: 'khatmah', element: <Khatmah />, handle: { title: 'الختمة' } },
+          { path: 'adhkar', element: <Adhkar />, handle: { title: 'الأذكار' } },
+          { path: 'tasbih', element: <Tasbih />, handle: { title: 'المسبحة' } },
+          { path: 'downloads', element: <Downloads />, handle: { title: 'التنزيلات' } },
+          { path: 'night', element: <Night />, handle: { title: 'قيام الليل' } },
+          { path: 'lab/waqf', element: <Waqf />, handle: { title: 'الوقف والابتداء' } },
           { path: 'root/:root', element: <ComingSoon title="شجرة الجذور" />, handle: { title: 'الجذور' } },
           { path: 'settings', element: <Settings />, handle: { title: 'الإعدادات' } },
           { path: 'settings/reading', element: <ReadingSettings />, handle: { title: 'الخط والعرض والسمات' } },
@@ -59,7 +71,8 @@ export const router = createHashRouter([
         children: [
           { path: 'read/:surah/:ayah?', element: <Reader /> },
           { path: 'tasmi', element: <Tasmi />, handle: { title: 'التسميع' } },
-          { path: 'welcome', element: <ComingSoon title="مرحباً بك في نور القرآن" />, handle: { title: 'التهيئة' } },
+          { path: 'drive', element: <Drive />, handle: { title: 'وضع القيادة' } },
+          { path: 'welcome', element: <Onboarding />, handle: { title: 'التهيئة' } },
         ],
       },
     ],
